@@ -13,6 +13,7 @@ export default function SentrafundRegister() {
   const [formData, setFormData] = useState({
     username: "",
     email: "",
+    fullname: "",
     password: "",
     confirmPassword: "",
   });
