@@ -9,6 +9,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Withdrawal from "./pages/Withdrawal";
 import Dashboard from "./pages/dashboard";
 import ProtectedRoute from "./components/ProtectedRoute";
+import PasswordReset from "./pages/PasswordReset";
 
 function App() {
   return (
@@ -19,6 +20,11 @@ function App() {
           <Route path="/login" element={<SentrafundLogin />} />
           <Route path="/register" element={<SentrafundRegister />} />
           <Route path="/withdrawal" element={<Withdrawal />} />
+          <Route path="/password-reset" element={<PasswordReset />} />
+          <Route
+            path="/password-reset-confirm/:uuid/:token"
+            element={<PasswordReset />}
+          />
           <Route
             path="/dashboard"
             element={
