@@ -10,7 +10,9 @@ import Withdrawal from "./pages/Withdrawal";
 import Dashboard from "./pages/dashboard";
 import ProtectedRoute from "./components/ProtectedRoute";
 import PasswordReset from "./pages/PasswordReset";
+import PasswordResetConfirm from "./pages/PasswordResetConfirm";
 
+// let link = /password-reset/confirm/l/ctat4z-df1e120a3a5bc78cd768d0e7812fdd7b
 function App() {
   return (
     <>
@@ -22,8 +24,8 @@ function App() {
           <Route path="/withdrawal" element={<Withdrawal />} />
           <Route path="/password-reset" element={<PasswordReset />} />
           <Route
-            path="/password-reset-confirm/:uuid/:token"
-            element={<PasswordReset />}
+            path="/password-reset/confirm/:uid/:token"
+            element={<PasswordResetConfirm />}
           />
           <Route
             path="/dashboard"

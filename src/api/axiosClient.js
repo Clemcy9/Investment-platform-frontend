@@ -6,7 +6,7 @@ const local_url = "http://127.0.0.1:8000/api";
 
 const BASE_URL = local_url;
 
-const axiosClient = axios.create({
+export const axiosClient = axios.create({
   baseURL: BASE_URL,
   headers: {
     "Content-Type": "application/json",
@@ -15,6 +15,14 @@ const axiosClient = axios.create({
   withCredentials: true,
 });
 
+export const axiosPublic = axios.create({
+  baseURL: BASE_URL,
+  headers: {
+    "Content-Type": "application/json",
+    Accept: "application/json",
+  },
+  withCredentials: false, // prevent sending cookies or CSRF headers
+});
 axiosClient.interceptors.request.use((config) => {
   const token = localStorage.getItem("authToken");
   if (token) {
@@ -28,5 +36,3 @@ axiosClient.interceptors.request.use((config) => {
 
   return config;
 });
-
-export default axiosClient;
